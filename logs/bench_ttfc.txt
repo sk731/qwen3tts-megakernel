@@ -1,0 +1,13 @@
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:2150 for open-end generation.
+CLEAN_TTFC=47.0 ms (first chunk 80 ms audio)
+  prefill         : 21 tokens  20.3 ms  (0.97 ms/tok)
+  1st talker frame: 1.0 ms
+  1st cp (15 cb)  : 6.6 ms
+  1st codec decode: 14.5 ms

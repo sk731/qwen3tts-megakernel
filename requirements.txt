@@ -1,0 +1,31 @@
+# Qwen3-TTS runtime (talker, code predictor, and the 12Hz codec all live in qwen-tts)
+qwen-tts
+torch
+transformers
+accelerate
+safetensors
+numpy
+soundfile
+# hf_transfer: ~20x faster model download (HF throttles single connections to ~3 MB/s;
+# this parallelizes). enable with HF_HUB_ENABLE_HF_TRANSFER=1.
+hf_transfer
+
+# voice pipeline (tested with pipecat-ai 1.3):
+#   groq   = Groq STT + LLM
+#   silero = voice-activity detection (SileroVADAnalyzer)
+#   local  = local mic/speaker transport (laptop demo)
+pipecat-ai[groq,silero,local]
+python-dotenv
+
+# headless-5090 bridge demo (see DEMO.md): the box serves the megakernel TTS over HTTP
+# (serve_tts.py -> fastapi/uvicorn) and the laptop sends text + plays audio (demo_bridge.py -> requests)
+fastapi
+uvicorn
+requests
+
+# JIT-building the megakernel (cloned separately) needs ninja
+ninja
+
+# The CUDA megakernel itself is NOT a pip dependency. On the 5090:
+#   git clone https://github.com/AlpinDale/qwen_megakernel /workspace/qwen_megakernel
+# It JIT-builds with nvcc (-arch=sm_120a) on first import.

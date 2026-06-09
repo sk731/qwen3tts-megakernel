@@ -1,0 +1,25 @@
+
+********
+Warning: flash-attn is not installed. Will only run the manual PyTorch version. Please install flash-attn for faster inference.
+********
+ 
+per-position cosine (kernel vs stock 5-layer backbone):
+  pos  0: 1.0000
+  pos  1: 1.0000
+  pos  2: 1.0000
+  pos  3: 1.0000
+  pos  4: 1.0000
+  pos  5: 1.0000
+  pos  6: 1.0000
+  pos  7: 0.9999
+  pos  8: 0.9999
+  pos  9: 1.0000
+  pos 10: 0.9999
+  pos 11: 0.9999
+  pos 12: 0.9999
+  pos 13: 1.0000
+  pos 14: 1.0000
+  pos 15: 0.9998
+  pos 16: 1.0000
+  pos 17: 0.9998
+min cosine 0.9998  mean 0.9999

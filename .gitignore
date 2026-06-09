@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Model weights / caches (download, do not commit)
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.gguf
+.hf_cache/
+models/
+
+# Audio / demo artifacts
+*.wav
+*.mp3
+*.flac
+recordings/
+
+# CUDA / build
+build/
+*.o
+*.so
+*.ptx
+*.cubin
+
+# Benchmark output
+bench/results/
+*.golden.npz
+
+# Secrets - never commit
+.env
+
+# working log - not shipped (README.md is the single source of truth)
+NOTES.md
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# keep the A/B audio samples in the repo as evidence
+!samples/
+!samples/*.wav
