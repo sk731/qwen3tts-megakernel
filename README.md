@@ -105,7 +105,8 @@ Needs an **RTX 5090** (the kernel is sm_120 / Blackwell, CUDA 12.8+). The pipeli
 GPU/CPU with `DECODE_BACKEND=reference`; only the kernel needs the 5090.
 
 ```bash
-# 1. clone the kernel (unmodified) and let it JIT-build
+# 1. clone the kernel (unmodified) to /workspace/qwen_megakernel -- the megakernel backend imports
+#    it from there and JIT-builds it on first use. Cloned elsewhere? set QWEN_MEGAKERNEL_PATH=<dir>.
 git clone https://github.com/AlpinDale/qwen_megakernel /workspace/qwen_megakernel
 
 # 2. install (the model downloads on first load; hf_transfer makes it ~20x faster)

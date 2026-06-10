@@ -48,7 +48,10 @@ def _patch_suppress_tokens():
     SuppressTokensLogitsProcessor._mask_cached = True
 
 
-def _build_ops(kernel_path="/workspace/qwen_megakernel"):
+def _build_ops(kernel_path=None):
+    # the backend imports the kernel from here and JIT-builds it. clone qwen_megakernel to the
+    # default path below, or point QWEN_MEGAKERNEL_PATH at wherever you cloned it.
+    kernel_path = kernel_path or os.getenv("QWEN_MEGAKERNEL_PATH", "/workspace/qwen_megakernel")
     if kernel_path not in sys.path:
         sys.path.insert(0, kernel_path)
     from qwen_megakernel.build import get_extension
